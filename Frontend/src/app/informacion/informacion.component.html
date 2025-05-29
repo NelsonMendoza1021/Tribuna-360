@@ -1,0 +1,29 @@
+<div class="top-bar">
+  <button class="cerrar-sesion-btn" (click)="cerrarSesion()">
+    Cerrar Sesión
+  </button>
+</div>
+
+<section style="flex: 1; padding: 40px;">
+  <div class="container-informacion">
+    <section>
+      <h1>Bienvenido a Tribuna360</h1>
+      <p>
+        Nos alegra tenerte aquí. Esta plataforma está diseñada exclusivamente para los abonados del fútbol colombiano, brindándote acceso a beneficios exclusivos, contenido personalizado, estadísticas en tiempo real, gestión de tus abonos y mucho más. Disfruta de una experiencia futbolera completa, pensada para ti.
+      </p>
+      <!-- Galería de imágenes -->
+      <div class="galeria">
+        <button (click)="anteriorImagen()" class="galeria-btn">&#8592;</button>
+        <img [src]="imagenes[indiceActual]" alt="Galería" class="galeria-img">
+        <button (click)="siguienteImagen()" class="galeria-btn">&#8594;</button>
+      </div>
+      <!-- Botón centrado para consultar precios -->
+      <div style="display: flex; justify-content: center; margin-top: 32px;">
+        <button class="consultar-precios-btn" (click)="irAPrecios()">
+          Consultar precios
+        </button>
+      </div>
+    </section>
+  </div>
+  <!-- Aquí puedes agregar más contenido si lo deseas -->
+</section>

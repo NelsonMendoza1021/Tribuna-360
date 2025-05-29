@@ -1,0 +1,200 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  background-color: #f0f2f5; /* Light grey background */
+  padding: 20px;
+}
+
+.register-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 700px; /* Adjust as needed */
+}
+
+.card-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.form-section {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #eee;
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 15px;
+}
+
+.form-section h3 {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px; /* Compensate for column padding */
+  margin-right: -10px;
+  margin-bottom: 15px;
+}
+
+.col, .col-sm-4, .col-sm-8 {
+  flex: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box; /* Include padding in element's total width */
+  margin-bottom: 10px; /* Space between rows on small screens */
+}
+
+/* Adjust column widths for larger screens */
+@media (min-width: 576px) {
+  .col {
+    flex: 1; /* Equal width columns */
+    max-width: 50%;
+  }
+  .col-sm-4 {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+  .col-sm-8 {
+    flex: 0 0 66.6667%;
+    max-width: 66.6667%;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box; /* Include padding in width */
+  font-size: 16px;
+  color: #333;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.text-danger {
+  color: #dc3545;
+  font-size: 0.85em;
+  margin-top: 5px;
+}
+
+/* Checkbox styling */
+.terms-checkbox {
+  display: flex;
+  align-items: flex-start; /* Align checkbox to top of text */
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.form-check-input {
+  margin-right: 10px;
+  margin-top: 3px; /* Adjust vertical alignment of checkbox */
+  width: 18px;
+  height: 18px;
+}
+
+.form-check-label {
+  margin-bottom: 0;
+  font-weight: normal;
+  color: #555;
+}
+
+.link-primary {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link-primary:hover {
+  text-decoration: underline;
+}
+
+/* Alert/Info box */
+.alert {
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  font-size: 0.95em;
+}
+
+.alert-info {
+  background-color: #e0f7fa;
+  border-color: #b2ebf2;
+  color: #007bb6;
+}
+
+.alert strong {
+  font-weight: 700;
+}
+
+/* Form actions (buttons) */
+.form-actions {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 15px; /* Space between buttons */
+  padding-top: 20px;
+  border-top: 1px dashed #eee;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex; /* For icon alignment */
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.btn-primary:disabled {
+  background-color: #a8d1ff; /* Lighter blue when disabled */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+

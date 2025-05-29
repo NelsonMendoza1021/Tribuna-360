@@ -1,0 +1,43 @@
+<header>
+  <div class="header-container">
+    <a routerLink="/bienvenida" class="logo" style="text-decoration: none;">Tribuna360</a>
+  </div>
+</header>
+
+<main class="login-container">
+  <h1>Iniciar Sesión en Tribuna360</h1>
+  <form class="login-form">
+    <div class="form-group">
+      <label for="documentType">Tipo de Documento</label>
+      <select id="documentType" name="documentType" required>
+        <option value="">Selecciona</option>
+        <option value="CC">Cédula de Ciudadanía (CC)</option>
+        <option value="Passport">Pasaporte</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="documentNumber">Número de Documento</label>
+      <input type="text" id="documentNumber" name="documentNumber" placeholder="Tu número de documento" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" placeholder="Tu contraseña" required>
+    </div>
+    <div class="forgot-password">
+      <a routerLink="/forgot-password">¿Olvidaste tu contraseña?</a>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <button type="submit" class="btn btn-primary btn-block" style="flex: 1;">Iniciar Sesión</button>
+      <a routerLink="/informacion" class="btn btn-info btn-block" style="flex: 1; text-align: center;">Información</a>
+    </div>
+  </form>
+  <div class="register-link">
+    <p>¿No tienes cuenta?
+      <a routerLink="/registro" class="btn btn-secondary" style="cursor:pointer;">Registrarse</a>
+    </p>
+  </div>
+</main>
+
+<img src="/assets/dimayorr.png" class="img-bottom-left" alt="Esquina izquierda" />
+<img src="/assets/liga.png" class="img-bottom-right" alt="Esquina derecha" />
+

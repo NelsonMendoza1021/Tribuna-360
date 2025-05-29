@@ -1,0 +1,108 @@
+:root {
+  --verde-oscuro: #0d2e23;
+  --verde-claro: #a2d8b0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8ecda;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--verde-oscuro);
+}
+
+.top-right-buttons .btn {
+  margin-left: 1rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--verde-oscuro);
+  background-color: var(--verde-claro);
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #8cc89b;
+}
+
+.btn-primary {
+  font-weight: bold;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px);
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.welcome-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--verde-oscuro); /* Título en verde oscuro */
+}
+
+.welcome-container p {
+  max-width: 800px;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.img-bottom-left,
+.img-bottom-right,
+.img-bottom-center {
+  position: absolute;
+  bottom: 20px;
+  width: 60px;
+}
+
+.img-bottom-left {
+  left: 20px;
+}
+
+.img-bottom-right {
+  right: 20px;
+}
+
+.img-bottom-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+:root {
+  --verde-oscuro: #0d2e23;
+}
+
+:root {
+  --verde-oscuro: #0d2e23;
+}
+
+/* Asegura que el logo del header tenga el color correcto */
+.logo {
+  color: var(--verde-oscuro);
+  --verde-oscuro: #1d7055;
+}
+
+/* Aplica el color al título "Bienvenido a Tribuna360" */
+h1 {
+  color: var(--verde-oscuro);
+  --verde-oscuro: #1d7055;
+}
+

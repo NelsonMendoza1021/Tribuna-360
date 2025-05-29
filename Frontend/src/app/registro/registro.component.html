@@ -1,0 +1,256 @@
+<div class="register-container">
+  <div class="register-card">
+    <h2 class="card-title">Registro</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-section">
+        <h3>Información personal</h3>
+        <div class="row">
+          <div class="col">
+            <label for="documentType">Tipo de documento (*)</label>
+            <select id="documentType" formControlName="documentType" class="form-control">
+              <option *ngFor="let type of documentTypes" [value]="type">{{ type }}</option>
+            </select>
+            <div *ngIf="isInvalid('documentType')" class="text-danger">
+              Tipo de documento es requerido.
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="documentNumber">Documento (*)</label>
+            <input
+              type="text"
+              id="documentNumber"
+              formControlName="documentNumber"
+              class="form-control"
+              placeholder="1234567890"
+            />
+            <div *ngIf="isInvalid('documentNumber')" class="text-danger">
+              <span *ngIf="f['documentNumber'].errors?.['required']">
+                Número de documento es requerido.
+              </span>
+              <span *ngIf="f['documentNumber'].errors?.['pattern']">
+                Solo se permiten dígitos.
+              </span>
+            </div>
+          </div>
+          <div class="col">
+            <label for="confirmDocumentNumber">Confirme su documento (*)</label>
+            <input
+              type="text"
+              id="confirmDocumentNumber"
+              formControlName="confirmDocumentNumber"
+              class="form-control"
+              placeholder="1234567890"
+            />
+            <div *ngIf="isInvalid('confirmDocumentNumber')" class="text-danger">
+              <span *ngIf="f['confirmDocumentNumber'].errors?.['required']">
+                Confirmar documento es requerido.
+              </span>
+              <span *ngIf="f['confirmDocumentNumber'].errors?.['pattern']">
+                Solo se permiten dígitos.
+              </span>
+              <span *ngIf="f['confirmDocumentNumber'].errors?.['passwordMismatch']">
+                Los números de documento no coinciden.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="firstName">Nombres (*)</label>
+            <input
+              type="text"
+              id="firstName"
+              formControlName="firstName"
+              class="form-control"
+              placeholder="Ingrese sus nombres"
+            />
+            <div *ngIf="isInvalid('firstName')" class="text-danger">
+              Nombres son requeridos.
+            </div>
+          </div>
+          <div class="col">
+            <label for="lastName">Apellidos (*)</label>
+            <input
+              type="text"
+              id="lastName"
+              formControlName="lastName"
+              class="form-control"
+              placeholder="Ingrese sus apellidos"
+            />
+            <div *ngIf="isInvalid('lastName')" class="text-danger">
+              Apellidos son requeridos.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Información de contacto</h3>
+        <div class="row">
+          <div class="col">
+            <label for="email">Correo electrónico (*)</label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              class="form-control"
+              placeholder="Ingrese su correo electró"
+            />
+            <div *ngIf="isInvalid('email')" class="text-danger">
+              <span *ngIf="f['email'].errors?.['required']">
+                Correo electrónico es requerido.
+              </span>
+              <span *ngIf="f['email'].errors?.['email']">
+                Ingrese un correo electrónico válido.
+              </span>
+            </div>
+          </div>
+          <div class="col">
+            <label for="confirmEmail">Confirme su correo electrónico (*)</label>
+            <input
+              type="email"
+              id="confirmEmail"
+              formControlName="confirmEmail"
+              class="form-control"
+              placeholder="Confirme su correo electró"
+            />
+            <div *ngIf="isInvalid('confirmEmail')" class="text-danger">
+              <span *ngIf="f['confirmEmail'].errors?.['required']">
+                Confirmar correo electrónico es requerido.
+              </span>
+              <span *ngIf="f['confirmEmail'].errors?.['email']">
+                Ingrese un correo electrónico válido.
+              </span>
+              <span *ngIf="f['confirmEmail'].errors?.['passwordMismatch']">
+                Los correos electrónicos no coinciden.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="countryCode">Indicativo telefónico (*)</label>
+            <select id="countryCode" formControlName="countryCode" class="form-control">
+              <option *ngFor="let code of countryCodes" [value]="code">{{ code }}</option>
+            </select>
+            <div *ngIf="isInvalid('countryCode')" class="text-danger">
+              Indicativo es requerido.
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <label for="phoneNumber">Teléfono celular (*)</label>
+            <input
+              type="text"
+              id="phoneNumber"
+              formControlName="phoneNumber"
+              class="form-control"
+              placeholder="Ingrese su teléfono"
+            />
+            <div *ngIf="isInvalid('phoneNumber')" class="text-danger">
+              <span *ngIf="f['phoneNumber'].errors?.['required']">
+                Teléfono celular es requerido.
+              </span>
+              <span *ngIf="f['phoneNumber'].errors?.['pattern']">
+                Solo se permiten dígitos.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="address">Dirección (*)</label>
+            <input
+              type="text"
+              id="address"
+              formControlName="address"
+              class="form-control"
+              placeholder="Ingrese su dirección"
+            />
+            <div *ngIf="isInvalid('address')" class="text-danger">
+              Dirección es requerida.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Información de la cuenta</h3>
+        <div class="row">
+          <div class="col">
+            <label for="password">Contraseña (*)</label>
+            <input
+              type="password"
+              id="password"
+              formControlName="password"
+              class="form-control"
+              placeholder="Contraseña"
+            />
+            <div *ngIf="isInvalid('password')" class="text-danger">
+              <span *ngIf="f['password'].errors?.['required']">
+                Contraseña es requerida.
+              </span>
+              <span *ngIf="f['password'].errors?.['minlength']">
+                La contraseña debe tener al menos 6 caracteres.
+              </span>
+            </div>
+          </div>
+          <div class="col">
+            <label for="confirmPassword">Confirmar contraseña (*)</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              formControlName="confirmPassword"
+              class="form-control"
+              placeholder="Confirme su contraseña"
+            />
+            <div *ngIf="isInvalid('confirmPassword')" class="text-danger">
+              <span *ngIf="f['confirmPassword'].errors?.['required']">
+                Confirmar contraseña es requerida.
+              </span>
+              <span *ngIf="f['confirmPassword'].errors?.['passwordMismatch']">
+                Las contraseñas no coinciden.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group terms-checkbox">
+        <input
+          type="checkbox"
+          id="acceptTerms"
+          formControlName="acceptTerms"
+          class="form-check-input"
+        />
+        <label class="form-check-label" for="acceptTerms">
+          Acepta los
+          <a href="#" class="link-primary">Términos y condiciones de la compra</a> y los
+          <a href="#" class="link-primary">términos y condiciones del tratamiento de datos personales</a>
+        </label>
+        <div *ngIf="isInvalid('acceptTerms')" class="text-danger">
+          Debe aceptar los términos y condiciones.
+        </div>
+      </div>
+
+      <div class="alert alert-info">
+        <strong>Importante:</strong> Verifique su correo electrónico, debido a que deberá usarlo en el siguiente paso.
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-secondary" (click)="onCancel()">
+          <i class="fas fa-times"></i> Cancelar
+        </button>
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
+          <i class="fas fa-user-plus"></i> Registrarse
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

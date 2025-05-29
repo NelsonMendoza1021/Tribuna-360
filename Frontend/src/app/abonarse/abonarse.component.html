@@ -1,0 +1,165 @@
+<div class="abonarse-container" style="display: flex; min-height: 400px;">
+  <!-- Barra lateral izquierda con botones -->
+  <aside
+    style="width: 220px; background: #f8f9fa; padding: 32px 16px; border-radius: 12px 0 0 12px; box-shadow: 2px 0 8px rgba(0,0,0,0.04); display: flex; flex-direction: column; gap: 18px;">
+    <h2 style="font-size: 20px; color: #28a745; margin-bottom: 24px; text-align: center;">Selecciona tu equipo</h2>
+    <button class="equipo-btn" (click)="mostrarPanel('Millonarios')">Millonarios FC</button>
+    <button class="equipo-btn" (click)="mostrarPanel('Atlético Nacional')">Atlético Nacional</button>
+    <button class="equipo-btn" (click)="mostrarPanel('Junior')">Junior FC</button>
+    <button class="equipo-btn" (click)="mostrarPanel('Santa Fe')">Santa Fe</button>
+    <button class="equipo-btn" (click)="mostrarPanel('América')">América de Cali</button>
+    <button class="equipo-btn" (click)="mostrarPanel('Bucaramanga')">Atlético Bucaramanga</button>
+  </aside>
+
+  <!-- Panel de contenido -->
+  <div style="flex: 1; padding: 40px; position: relative;">
+    <button (click)="volver()" style="position: absolute; top: 16px; right: 16px; padding: 8px 12px; background-color: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; z-index: 10;">Volver</button>
+
+    <!-- Millonarios -->
+    <div *ngIf="equipoSeleccionado === 'Millonarios'" class="panel-derecho">
+      <h2 style="color: #007bff;">Millonarios FC</h2>
+      <label style="font-weight: 600;">Selecciona la localidad:</label>
+      <select class="select-localidad">
+        <option>Lateral sur alta</option>
+        <option>Oriental general baja norte y sur</option>
+        <option>Oriental central baja</option>
+        <option>Oriental preferencial alta norte y sur</option>
+        <option>Occidental general baja alta y sur</option>
+        <option>Occidental lateral norte y sur</option>
+        <option>Oriental central alta</option>
+        <option>Occidental pref alta y norte sur</option>
+        <option>Occidental central baja</option>
+      </select>
+
+      <div style="margin-top: 24px;">
+        <label style="font-weight: 600;">Selecciona tipo de abonado</label>
+        <select class="select-localidad">
+          <option value="nuevo">Abonado nuevo</option>
+          <option value="antiguo">Abonado antiguo</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Atlético Nacional -->
+    <div *ngIf="equipoSeleccionado === 'Atlético Nacional'" class="panel-derecho">
+      <h2 style="color: #016b0f;">Atlético Nacional</h2>
+      <label style="font-weight: 600;">Selecciona la localidad:</label>
+      <select class="select-localidad">
+        <option>Sur y norte</option>
+        <option>Gramilla</option>
+        <option>Oriental baja</option>
+        <option>Oriental alta</option>
+        <option>Occidental baja</option>
+        <option>Occidental alta</option>
+        <option>Platea</option>
+      </select>
+
+      <div style="margin-top: 24px;">
+        <label style="font-weight: 600;">Selecciona tipo de abonado</label>
+        <select class="select-localidad">
+          <option value="nuevo">Abonado nuevo</option>
+          <option value="antiguo">Abonado antiguo</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Junior FC -->
+    <div *ngIf="equipoSeleccionado === 'Junior'" class="panel-derecho">
+      <h2 style="color: #e00000;">Junior FC</h2>
+      <label style="font-weight: 600;">Selecciona la localidad:</label>
+      <select class="select-localidad">
+        <option>Occidental</option>
+        <option>Oriental</option>
+        <option>Norte y sur</option>
+        <!-- Modifica estas opciones -->
+      </select>
+
+      <div style="margin-top: 24px;">
+        <label style="font-weight: 600;">Selecciona tipo de abonado</label>
+        <select class="select-localidad">
+          <option value="nuevo">Abonado nuevo</option>
+          <option value="antiguo">Abonado antiguo</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Santa Fe -->
+    <div *ngIf="equipoSeleccionado === 'Santa Fe'" class="panel-derecho">
+      <h2 style="color: #c00000;">Santa Fe</h2>
+      <label style="font-weight: 600;">Selecciona la localidad:</label>
+      <select class="select-localidad">
+        <option>Occidental preferencial</option>
+        <option>Occidental platea alta</option>
+        <option>Occidental platea baja</option>
+        <option>Occidental general</option>
+        <option>Oriental platea </option>
+        <option>Oriental preferencial</option>
+        <option>Oriental general</option>
+        <option>Lateral sur</option>
+        <!-- Modifica estas opciones -->
+      </select>
+
+      <div style="margin-top: 24px;">
+        <label style="font-weight: 600;">Selecciona tipo de abonado</label>
+        <select class="select-localidad">
+          <option value="nuevo">Abonado nuevo</option>
+          <option value="antiguo">Abonado antiguo</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- América de Cali -->
+    <div *ngIf="equipoSeleccionado === 'América'" class="panel-derecho">
+      <h2 style="color: #b80000;">América de Cali</h2>
+      <label style="font-weight: 600;">Selecciona la localidad:</label>
+      <select class="select-localidad">
+        <option>Occidental 1</option>
+        <option>Occidental 2</option>
+        <option>Occidental 3</option>
+        <option>Oriental 1</option>
+        <option>Oriental 2</option>
+        <option>Norte</option>
+         
+        <!-- Modifica estas opciones -->
+      </select>
+
+      <div style="margin-top: 24px;">
+        <label style="font-weight: 600;">Selecciona tipo de abonado</label>
+        <select class="select-localidad">
+          <option value="nuevo">Abonado nuevo</option>
+          <option value="antiguo">Abonado antiguo</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Atlético Bucaramanga -->
+    <div *ngIf="equipoSeleccionado === 'Bucaramanga'" class="panel-derecho">
+      <h2 style="color: #ffcc00;">Atlético Bucaramanga</h2>
+      <label style="font-weight: 600;">Selecciona la localidad:</label>
+      <select class="select-localidad">
+        <option>Occidental alta</option>
+        <option>Occidental baja</option>
+        <option>Oriental</option>
+        <option>Norte alta</option>
+        <option>Sur alta</option>
+        <option>Sur baja</option>
+        
+        <!-- Modifica estas opciones -->
+      </select>
+
+      <div style="margin-top: 24px;">
+        <label style="font-weight: 600;">Selecciona tipo de abonado</label>
+        <select class="select-localidad">
+          <option value="nuevo">Abonado nuevo</option>
+          <option value="antiguo">Abonado antiguo</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div style="width: 100%; display: flex; justify-content: center; margin-top: 40px; margin-bottom: 20px;">
+  <button class="btn-pagar" (click)="irAAbonado()">Pagar</button>
+</div>
+
